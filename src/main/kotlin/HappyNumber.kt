@@ -22,27 +22,41 @@ import java.util.*
 class HappyNumber {
 
     val usedNumbers = TreeSet<Int>()
+    val happyNumber = 1
 
     fun isHappyNumber(number: Int): Boolean {
 
         val charactersOfNumber = number.toString().toCharArray()
+        val sum = powerAndSumEachNumber(charactersOfNumber)
+
+        if ( sum == happyNumber ) {
+            return true
+        }
+
+        if (numberAlreadyUsed(sum)){
+            return false
+        }
+
+        return isHappyNumber(sum)
+    }
+
+    fun numberAlreadyUsed(number: Int): Boolean {
+        if (usedNumbers.contains(number)){
+            return true
+        }
+        usedNumbers.add(number)
+        return false
+    }
+
+    fun powerAndSumEachNumber(charactersOfNumber: CharArray): Int {
         var sum = 0
         var intValue: Int
-
         charactersOfNumber.forEach {
             intValue = it.toString().toInt()
             sum += intValue * intValue
         }
-
-        if ( sum == 1 ) {
-            return true
-        }
-
-        if (usedNumbers.contains(sum)){
-            return false
-        }
-        usedNumbers.add(sum)
-
-        return isHappyNumber(sum)
+        return sum
     }
+
+
 }

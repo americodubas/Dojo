@@ -20,39 +20,48 @@
  */
 class Diamonds {
 
-    var space = 0
-    var spaceBetween = 0
+    private var leftSpace = 0
+    private var spaceBetweenLetters = 0
+    private var firstLetter = true
 
-    fun diamondGenerator(letter: Char) {
-        val letters = 'A' until  letter+1
-        space = letters.count()
-        spaceBetween = 1
+    fun diamondGenerator(letter: Char): Array<String?> {
+
+        val letters = 'A' until  letter + 1
+        val lines = arrayOfNulls<String>(letters.count() * 2 - 1)
+        var firstPosition = 0
+        var lastPosition = lines.size - 1
+
+        leftSpace = letters.count()
+        spaceBetweenLetters = 1
+
         letters.forEach{
-            printDiamond(-1, 2, letters.count(), it)
+            val line = generateLine(it)
+
+            lines[firstPosition++] = line
+            lines[lastPosition--] = line
         }
 
-        space = 2
-        spaceBetween -= 4
-        val lettersReversed  = letters.reversed().drop(1)
-        lettersReversed.forEach {
-            printDiamond(1, -2, letters.count(), it)
-        }
-
+        return lines
     }
 
-    private fun printDiamond(spaceIncrement: Int, spaceBetweenIncrement: Int, lettersCount: Int, it: Char) {
-        print("${repeatSpace(space)}$it")
-        if (space != lettersCount) {
-            print("${repeatSpace(spaceBetween)}$it")
-            spaceBetween += spaceBetweenIncrement
+    private fun generateLine(it: Char): String {
+        val line = StringBuilder()
+                .append("${repeatSpace(leftSpace)}$it")
+
+        if (!firstLetter) {
+            line.append("${repeatSpace(spaceBetweenLetters)}$it")
+            spaceBetweenLetters += 2
+        } else {
+            firstLetter = false
         }
 
-        println()
-        space += spaceIncrement
+        leftSpace--
+
+        return line.toString()
     }
 
-    fun repeatSpace(times: Int):String {
-        return " ".repeat(times)
+    fun repeatSpace(t: Int):String {
+        return " ".repeat(t)
     }
 
 }

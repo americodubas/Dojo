@@ -3,10 +3,10 @@ import org.junit.Test
 
 class ATMachineTest {
 
-    val hundred = 0
-    val fifty = 1
-    val twenty = 2
-    val ten = 3
+    private val hundred = 0
+    private val fifty = 1
+    private val twenty = 2
+    private val ten = 3
 
     @Test
     fun withdraw_30_one_of_20_and_one_of_10(){

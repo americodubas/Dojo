@@ -22,7 +22,7 @@ import java.util.*
 class HappyNumber {
 
     val usedNumbers = TreeSet<Int>()
-    val happyNumber = 1
+    private val happyNumber = 1
 
     fun isHappyNumber(number: Int): Boolean {
 

@@ -26,8 +26,7 @@ class HappyNumber {
 
     fun isHappyNumber(number: Int): Boolean {
 
-        val charactersOfNumber = number.toString().toCharArray()
-        val sum = powerAndSumEachNumber(charactersOfNumber)
+        val sum = powerAndSumEachNumber(number)
 
         if ( sum == happyNumber ) {
             return true
@@ -48,12 +47,15 @@ class HappyNumber {
         return false
     }
 
-    fun powerAndSumEachNumber(charactersOfNumber: CharArray): Int {
+    fun powerAndSumEachNumber(number: Int): Int {
         var sum = 0
         var intValue: Int
-        charactersOfNumber.forEach {
-            intValue = it.toString().toInt()
+        var digit = number
+
+        while (digit > 0) {
+            intValue = digit % 10
             sum += intValue * intValue
+            digit /= 10
         }
         return sum
     }

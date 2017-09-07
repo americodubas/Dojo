@@ -16,7 +16,7 @@ class HappyNumberTest {
 
     @Test
     fun should_return_eight_from_power_and_sum_twenty_two(){
-        assertEquals(HappyNumber().powerAndSumEachNumber(22.toString().toCharArray()), 8)
+        assertEquals(HappyNumber().powerAndSumEachNumber(22), 8)
     }
 
     @Test

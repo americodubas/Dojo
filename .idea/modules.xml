@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dojo.iml" filepath="$PROJECT_DIR$/.idea/modules/Dojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dojo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Dojo_main.iml" group="Dojo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dojo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Dojo_main.iml" group="Dojo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dojo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Dojo_test.iml" group="Dojo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dojo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Dojo_test.iml" group="Dojo" />
     </modules>
   </component>

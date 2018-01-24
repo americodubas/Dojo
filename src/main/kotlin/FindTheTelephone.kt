@@ -28,36 +28,36 @@ Saída correspondente:
  * */
 
 class FindTheTelephone {
-    val mapeamentoCaracteres =  arrayListOf("ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYS")
 
-    fun converter(texto: String): String {
-
-        var textoRetorno = StringBuilder()
-
-
-        texto.forEach {
-            textoRetorno.append(convertLetterToNumber(it))
-        }
-
-        return textoRetorno.toString()
+    companion object {
+        private val characters = arrayListOf("ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYS")
+        private val exceptions = "-10"
     }
 
-    private fun convertLetterToNumber(char: Char): Char {
-        if (char == '-' || char == '1' || char == '0')
-            return char
+    fun converter(phoneWithLeters: String): String {
 
-        var posicao = 0
+        val phone = StringBuilder()
 
-        var achouElementoNoArray = mapeamentoCaracteres.find {
+
+        phoneWithLeters.forEach {
+            phone.append(convertLetterToNumber(it))
+        }
+
+        return phone.toString()
+    }
+
+    fun convertLetterToNumber(char: Char): String {
+        if (isException(char)) return char.toString()
+
+        var number = 1
+        characters.find {
+            number++
             it.contains(char)
         }
 
-        var valorLetra = mapeamentoCaracteres.indexOf(achouElementoNoArray)
-
-        valorLetra += 2
-
-        return valorLetra.toChar()
+        return number.toString()
     }
 
+    private fun isException(char: Char) = exceptions.contains(char)
 
 }

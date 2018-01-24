@@ -10,3 +10,6 @@ Diamond:
 
 HappyNumber:
 > Américo Dubas, Gabriel Gaspar, Leonardo Menezes.
+
+FindTheTelephone:
+> Marina Pirutti, Ricardo Henrique, Rafael Viegas, Alexandre Reis, Felipe Requejo, Gabriel Gaspar, Américo Dubas

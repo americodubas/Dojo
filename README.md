@@ -13,3 +13,9 @@ HappyNumber:
 
 FindTheTelephone:
 > Marina Pirutti, Ricardo Henrique, Rafael Viegas, Alexandre Reis, Felipe Requejo, Gabriel Gaspar, Américo Dubas
+
+AutorNameFormatter:
+> Marina Pirutti, Felipe Requejo, Michell Sarno, Paulo Barros, Andre Sparvolli
+
+AuthorName:
+> Américo Dubas

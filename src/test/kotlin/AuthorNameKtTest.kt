@@ -4,24 +4,27 @@ import org.junit.Assert.*
 class AuthorNameTest {
 
     @Test
-    fun formatAuthorName() {
-        assertEquals("SILVA, Joao", formatAuthorName("Joao Silva"))
-        assertEquals("ARAUJO, Celso de", formatAuthorName("celso DE araujo"))
-
-    }
-
-    @Test
     fun oneName() {
         assertEquals("GUIMARAES", formatAuthorName("Guimaraes"))
     }
 
     @Test
-    fun twoName() {
+    fun twoNames() {
         assertEquals("SILVA, Joao", formatAuthorName("joao silva"))
     }
 
     @Test
-    fun threeName() {
-        assertEquals("SILVA NETO, Joao", formatAuthorName("joao silva neto"))
+    fun twoNamesWithException() {
+        assertEquals("ARAUJO, Celso de", formatAuthorName("celso de araujo"))
+    }
+
+    @Test
+    fun threeNames() {
+        assertEquals("COELHO, Paulo Cesar", formatAuthorName("paulo cesar coelho"))
+    }
+
+    @Test
+    fun threeNamesWithException() {
+        assertEquals("SILVA NETO, Joao da", formatAuthorName("joao da silva neto"))
     }
 }

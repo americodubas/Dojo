@@ -93,8 +93,7 @@ private fun capitalizeNameIfNotASeparator(s: String): String {
     }
 }
 
-private fun twoPartName(names: List<String>) =
-        names.last().toUpperCase() + ", " + names.first().capitalize()
+private fun twoPartName(names: List<String>) = names.last().toUpperCase() + ", " + names.first().capitalize()
 
 private val lastNameExceptions = arrayOf("FILHO", "FILHA", "NETO", "NETA", "SOBRINHO", "SOBRINHA", "JUNIOR")
 private val separators = arrayOf("da", "de", "do", "das", "dos")

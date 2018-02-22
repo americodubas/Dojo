@@ -19,3 +19,9 @@ AutorNameFormatter:
 
 AuthorName:
 > Américo Dubas
+
+ReadCheck:
+> Alexandre Reis, Felipe Requejo, Andre Sparvolli, Américo Dubas
+
+ReadCheck(final version):
+>Américo Dubas
